@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unique College Bhopal - Admissions Open 2025</title>
+    <style>
+        /* --- CSS VARIABLES & RESET --- */
+        :root {
+            --primary-color: #003366; /* Academic Blue */
+            --secondary-color: #FF8C00; /* Energetic Orange */
+            --text-color: #333;
+            --light-bg: #f4f4f4;
+            --white: #ffffff;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        
+        body { background-color: var(--light-bg); color: var(--text-color); line-height: 1.6; }
+
+        /* --- HEADER --- */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo-text h1 { color: var(--primary-color); font-size: 1.8rem; font-weight: 800; text-transform: uppercase; }
+        .logo-text p { color: var(--secondary-color); font-weight: 600; font-size: 0.9rem; }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            /* Using a generic college background image */
+            background: linear-gradient(rgba(0, 51, 102, 0.85), rgba(0, 51, 102, 0.85)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1600&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 4rem 5%;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .hero-text { flex: 1; min-width: 300px; padding-right: 2rem; margin-bottom: 2rem; }
+        .hero-text h2 { font-size: 2.5rem; margin-bottom: 1rem; line-height: 1.2; }
+        .hero-text .badge { background: var(--secondary-color); color: var(--white); padding: 5px 10px; border-radius: 4px; font-size: 0.9rem; text-transform: uppercase; margin-bottom: 10px; display: inline-block; }
+        
+        /* --- LEAD FORM DESIGN --- */
+        .lead-form-container {
+            flex: 0 0 350px;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            border-top: 5px solid var(--secondary-color);
+        }
+
+        .lead-form-container h3 { color: var(--primary-color); text-align: center; margin-bottom: 1.5rem; }
+        
+        .form-group { margin-bottom: 1rem; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: 600; font-size: 0.9rem; color: #444; }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        .btn-submit {
+            width: 100%;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .btn-submit:hover { background-color: #e07b00; }
+
+        /* --- COURSES SECTION --- */
+        .courses-section { padding: 4rem 5%; text-align: center; background: var(--white); }
+        .section-title { color: var(--primary-color); margin-bottom: 2rem; font-size: 2rem; }
+        
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .course-card {
+            background: var(--light-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+            transition: transform 0.2s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .course-card:hover { transform: translateY(-5px); }
+        .course-card h4 { color: var(--primary-color); font-size: 1.2rem; margin-bottom: 0.5rem; }
+        .course-card p { font-size: 0.9rem; color: #666; }
+
+        /* --- AFFILIATION BAR --- */
+        .affiliation-bar {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        /* --- FOOTER --- */
+        footer { background: #222; color: #aaa; padding: 2rem 5%; text-align: center; font-size: 0.9rem; }
+        footer p { margin-bottom: 10px; }
+
+        /* --- MOBILE RESPONSIVENESS --- */
+        @media (max-width: 768px) {
+            .hero { flex-direction: column; text-align: center; }
+            .hero-text { padding-right: 0; margin-bottom: 2rem; }
+            .lead-form-container { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-text">
+            <h1>Unique College</h1>
+            <p>Jawahar Chowk, Bhopal</p>
+        </div>
+        <div style="font-weight: bold; color: var(--primary-color);">
+            Call: +91-755-2776277
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <span class="badge">Admissions Open 2025-26</span>
+            <h2>Shape Your Future at Bhopal's Premier Institute</h2>
+            <p>Join a legacy of excellence. Affordable education with industry-standard curriculum affiliated with Barkatullah University.</p>
+            <p style="margin-top: 1rem; color: #ffca28; font-weight: bold;">✔ Scholarship Available | ✔ Expert Faculty</p>
+        </div>
+
+        <div class="lead-form-container" id="apply">
+            <h3>Enquire Now</h3>
+            
+            <form action="https://formspree.io/f/mldqqkag" method="POST">
+                
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" name="name" placeholder="Enter your name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" name="phone" placeholder="Enter mobile number" pattern="[0-9]{10}" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" name="email" placeholder="Enter email address" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Interested Course</label>
+                    <select name="course" required>
+                        <option value="" disabled selected>Select a Course</option>
+                        <option value="BA">B.A (Bachelor of Arts)</option>
+                        <option value="B.Com">B.Com (Bachelor of Commerce)</option>
+                        <option value="B.Sc">B.Sc (Bachelor of Science)</option>
+                        <option value="MA">M.A (Master of Arts)</option>
+                        <option value="M.Com">M.Com (Master of Commerce)</option>
+                        <option value="M.Sc">M.Sc (Master of Science)</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="btn-submit">Request Call Back</button>
+            </form>
+            </div>
+    </section>
+
+    <section class="affiliation-bar">
+        <h3>Affiliated to Barkatullah University, Bhopal</h3>
+        <p>Recognized by Dept. of Higher Education, Govt of M.P.</p>
+    </section>
+
+    <section class="courses-section">
+        <h2 class="section-title">Our Programs</h2>
+        <div class="course-grid">
+            <div class="course-card">
+                <h4>Bachelor of Arts (B.A)</h4>
+                <p>Explore Humanities, Social Sciences, and Liberal Arts with our comprehensive UG program.</p>
+            </div>
+            <div class="course-card">
+                <h4>Bachelor of Commerce (B.Com)</h4>
+                <p>Build a strong foundation in Accounting, Finance, and Business Management.</p>
+            </div>
+            <div class="course-card">
+                <h4>Bachelor of Science (B.Sc)</h4>
+                <p>Advanced practical learning in Physics, Chemistry, Maths, and Computer Science.</p>
+            </div>
+            <div class="course-card">
+                <h4>Master of Arts (M.A)</h4>
+                <p>Specialized PG degree focusing on research, critical thinking, and advanced theory.</p>
+            </div>
+            <div class="course-card">
+                <h4>Master of Commerce (M.Com)</h4>
+                <p>Expert-level knowledge in Commerce, Taxation, and Corporate Laws.</p>
+            </div>
+            <div class="course-card">
+                <h4>Master of Science (M.Sc)</h4>
+                <p>Research-oriented master's program in applied sciences and technology.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p><strong>Unique College, Bhopal</strong></p>
+        <p>Jawahar Chowk, T.T. Nagar, Bhopal, M.P. 462003</p>
+        <p>Email: usa4mcu@gmail.com</p>
+        <p>&copy; 2025 Unique College. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
