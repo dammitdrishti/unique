@@ -3,377 +3,567 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unique College Bhopal - Admissions Open 2025</title>
+    <title>Unique College Bhopal | Excellence in Education</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
-        /* --- CSS VARIABLES & RESET --- */
+        /* --- THEME VARIABLES --- */
         :root {
-            --primary-color: #003366; /* Academic Blue */
-            --secondary-color: #FF8C00; /* Energetic Orange */
-            --accent-color: #f0f4f8;
-            --text-color: #333;
+            --primary: #FF6F00; /* Vibrant Orange */
+            --secondary: #003366; /* Academic Blue */
+            --text-dark: #2D3436;
+            --text-light: #636e72;
+            --bg-light: #FFF8E1; /* Light Cream */
             --white: #ffffff;
-            --shadow: 0 4px 12px rgba(0,0,0,0.1);
+            --gradient-orange: linear-gradient(135deg, #FF6F00 0%, #FF9100 100%);
+            --shadow-card: 0 10px 30px rgba(0,0,0,0.08);
+            --radius: 15px;
         }
         
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; scroll-behavior: smooth; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
         
-        body { background-color: var(--accent-color); color: var(--text-color); line-height: 1.6; }
+        body { color: var(--text-dark); background-color: #f9f9f9; line-height: 1.6; }
+
+        /* --- MARQUEE --- */
+        .marquee-container {
+            background: var(--secondary);
+            color: white;
+            padding: 10px 0;
+            overflow: hidden;
+            white-space: nowrap;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 25s linear infinite;
+        }
+        .marquee-content span { margin-right: 40px; }
+        @keyframes marquee { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
 
         /* --- HEADER --- */
         header {
-            background-color: var(--white);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background: var(--white);
+            padding: 1rem 5%;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
             position: sticky;
             top: 0;
             z-index: 1000;
-            padding: 0.8rem 5%;
         }
-
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
+        
+        .nav-container {
+            max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;
         }
+        
+        .logo { display: flex; align-items: center; gap: 12px; }
+        .logo img { height: 55px; }
+        .logo-text h1 { font-size: 1.4rem; color: var(--secondary); margin: 0; line-height: 1; }
+        .logo-text p { font-size: 0.75rem; color: var(--primary); margin: 0; letter-spacing: 1px; font-weight: 600; }
 
-        .logo-text h1 { color: var(--primary-color); font-size: 1.5rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
-        .logo-text p { color: var(--secondary-color); font-weight: 600; font-size: 0.8rem; letter-spacing: 0.5px; }
-
-        .contact-header { display: flex; gap: 15px; align-items: center; }
-        .contact-header a { text-decoration: none; color: var(--primary-color); font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 5px; }
-        .contact-header a:hover { color: var(--secondary-color); }
+        .nav-links { display: flex; gap: 25px; align-items: center; }
+        .nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 500; font-size: 0.95rem; transition: 0.3s; }
+        .nav-links a:hover { color: var(--primary); }
+        
+        .btn-cta {
+            background: var(--gradient-orange);
+            color: white; padding: 10px 25px; border-radius: 50px; text-decoration: none; font-weight: 600;
+            box-shadow: 0 4px 15px rgba(255, 111, 0, 0.3); transition: transform 0.2s;
+        }
+        .btn-cta:hover { transform: translateY(-3px); color: white; }
 
         /* --- HERO SECTION --- */
         .hero {
-            background: linear-gradient(rgba(0, 51, 102, 0.9), rgba(0, 51, 102, 0.8)), url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=1600&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            color: var(--white);
-            padding: 4rem 5%;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-            gap: 2rem;
-            min-height: 80vh;
+            background: linear-gradient(rgba(0, 51, 102, 0.85), rgba(0, 51, 102, 0.85)), url('images/amb1.jpg');
+            background-size: cover; background-position: center;
+            height: 85vh; display: flex; align-items: center; justify-content: center; text-align: center; color: white; padding: 0 5%;
         }
-
-        .hero-text { flex: 1; min-width: 300px; max-width: 600px; }
-        .hero-text h2 { font-size: 2.8rem; margin-bottom: 1rem; line-height: 1.2; font-weight: 700; }
-        .hero-text p { font-size: 1.1rem; margin-bottom: 1.5rem; opacity: 0.9; }
-        .hero-text .highlight { color: #ffca28; font-weight: bold; }
         
-        .hero-features { display: flex; gap: 15px; flex-wrap: wrap; margin-top: 20px; }
-        .feature-tag { background: rgba(255,255,255,0.1); padding: 8px 15px; border-radius: 20px; font-size: 0.9rem; border: 1px solid rgba(255,255,255,0.3); }
-
-        /* --- LEAD FORM --- */
-        .lead-form-container {
-            flex: 0 0 380px;
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-            border-top: 6px solid var(--secondary-color);
-            max-width: 100%;
-        }
-
-        .lead-form-container h3 { color: var(--primary-color); text-align: center; margin-bottom: 1.5rem; font-size: 1.5rem; }
+        .hero-content h2 { font-size: 3.5rem; font-weight: 700; margin-bottom: 1rem; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        .hero-content p { font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9; max-width: 700px; margin-left: auto; margin-right: auto; }
         
-        .form-group { margin-bottom: 1rem; }
-        .form-group label { display: block; margin-bottom: 6px; font-weight: 600; font-size: 0.9rem; color: #555; }
-        .form-group input, .form-group select {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            font-size: 1rem;
-            transition: border 0.3s;
+        /* --- WHY CHOOSE US --- */
+        .features-section { padding: 5rem 5%; background: var(--bg-light); }
+        .section-header { text-align: center; margin-bottom: 3rem; }
+        .section-header h2 { font-size: 2.5rem; color: var(--secondary); }
+        .section-header span { color: var(--primary); }
+
+        .feature-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto;
         }
-        .form-group input:focus, .form-group select:focus { border-color: var(--secondary-color); outline: none; }
+
+        .feature-card {
+            background: var(--white); padding: 2.5rem; border-radius: var(--radius);
+            box-shadow: var(--shadow-card); position: relative; overflow: hidden; transition: transform 0.3s;
+            border-bottom: 4px solid transparent;
+        }
+        .feature-card:hover { transform: translateY(-10px); }
         
-        .btn-submit {
-            width: 100%;
-            background-color: var(--secondary-color);
-            color: var(--white);
-            padding: 14px;
-            border: none;
-            border-radius: 6px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s;
-            margin-top: 10px;
-        }
-        .btn-submit:hover { background-color: #e07b00; transform: translateY(-2px); }
+        .card-1 { border-bottom-color: #FF6F00; }
+        .card-2 { border-bottom-color: #003366; }
+        .card-3 { border-bottom-color: #2ecc71; }
 
-        /* --- AFFILIATION BAR --- */
-        .affiliation-bar {
-            background-color: var(--primary-color);
-            color: var(--white);
-            text-align: center;
-            padding: 2.5rem 5%;
+        .feature-icon {
+            width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem; margin-bottom: 1.5rem; color: white;
         }
-        .affiliation-bar h3 { font-size: 1.4rem; margin-bottom: 0.5rem; }
-        .affiliation-bar p { font-size: 1rem; opacity: 0.8; }
+        .bg-orange { background: var(--primary); }
+        .bg-blue { background: var(--secondary); }
+        .bg-green { background: #2ecc71; }
 
-        /* --- COURSES SECTION --- */
-        .section-padding { padding: 5rem 5%; max-width: 1200px; margin: 0 auto; }
-        .section-title { text-align: center; color: var(--primary-color); margin-bottom: 3rem; font-size: 2.2rem; font-weight: 700; }
+        .feature-card h3 { font-size: 1.3rem; margin-bottom: 0.8rem; color: var(--text-dark); }
+        .feature-card p { font-size: 0.95rem; color: var(--text-light); }
+
+        /* --- ACADEMIC COURSES (Block Grid) --- */
+        .courses-section { padding: 5rem 5%; background: white; }
         
         .course-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
-        }
-
-        .course-card {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s;
-            border-bottom: 4px solid transparent;
-        }
-        .course-card:hover { transform: translateY(-5px); border-bottom-color: var(--secondary-color); }
-        .course-card i { font-size: 2rem; color: var(--secondary-color); margin-bottom: 1rem; }
-        .course-card h4 { color: var(--primary-color); font-size: 1.3rem; margin-bottom: 0.8rem; }
-        .course-card p { font-size: 0.95rem; color: #666; margin-bottom: 1rem; }
-        .course-badge { background: #eef2f7; color: var(--primary-color); padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: 600; }
-
-        /* --- GALLERY PREVIEW --- */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-            margin-top: 2rem;
-        }
-        .gallery-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 8px;
-            transition: transform 0.3s;
-        }
-        .gallery-img:hover { transform: scale(1.02); }
-
-        /* --- LOCATION & CONTACT SECTION --- */
-        .contact-section { background: var(--white); padding: 5rem 5%; }
-        .contact-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
             max-width: 1200px;
             margin: 0 auto;
         }
-        
-        .contact-info { flex: 1; min-width: 300px; }
-        .contact-item { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 1.5rem; }
-        .contact-item i { color: var(--secondary-color); font-size: 1.2rem; margin-top: 5px; }
-        .contact-item h5 { font-size: 1.1rem; color: var(--primary-color); margin-bottom: 4px; }
-        .contact-item p { color: #555; font-size: 0.95rem; }
 
-        .social-buttons { display: flex; gap: 15px; margin-top: 2rem; }
-        .social-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 10px 20px;
-            border-radius: 50px;
-            text-decoration: none;
-            color: var(--white);
-            font-weight: 600;
-            transition: opacity 0.3s;
+        .course-block {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-card);
+            transition: transform 0.3s;
+            border: 1px solid #eee;
+            position: relative;
+            overflow: hidden;
         }
-        .fb-btn { background-color: #1877F2; }
-        .insta-btn { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
+        .course-block:hover { transform: translateY(-5px); border-color: var(--primary); }
+        
+        .course-icon {
+            width: 50px; height: 50px; background: var(--bg-light); color: var(--primary);
+            border-radius: 10px; display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem; margin-bottom: 1.5rem;
+        }
+        
+        .course-block h3 { font-size: 1.25rem; color: var(--secondary); margin-bottom: 0.5rem; }
+        .course-block p { font-size: 0.9rem; color: var(--text-light); margin-bottom: 1rem; }
+        .course-tag {
+            display: inline-block; padding: 4px 10px; border-radius: 4px;
+            font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+        }
+        .tag-ug { background: #e3f2fd; color: #1976d2; }
+        .tag-pg { background: #f3e5f5; color: #7b1fa2; }
+        .tag-cert { background: #e0f2f1; color: #00695c; }
+
+        /* --- VISUAL SECTIONS --- */
+        .gallery-section { padding: 5rem 5%; max-width: 1200px; margin: 0 auto; }
+        .amb-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 20px;
+        }
+        .amb-item { border-radius: var(--radius); overflow: hidden; height: 300px; box-shadow: var(--shadow-card); }
+        .amb-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+        .amb-item:hover img { transform: scale(1.1); }
+
+        .student-section { background: var(--bg-light); padding: 5rem 5%; text-align: center; }
+        .student-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto;
+        }
+        .stud-card { 
+            border-radius: var(--radius); overflow: hidden; height: 300px; 
+            box-shadow: var(--shadow-card); background: white; 
+        }
+        .stud-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
+        .stud-card:hover img { transform: scale(1.05); }
+
+        .event-section { padding: 5rem 5%; background: white; }
+        .event-collage {
+            display: flex; gap: 20px; overflow-x: auto; padding-bottom: 20px;
+            scroll-snap-type: x mandatory;
+        }
+        .event-card {
+            min-width: 300px; height: 350px; border-radius: var(--radius); overflow: hidden; position: relative;
+            scroll-snap-align: center; box-shadow: var(--shadow-card);
+        }
+        .event-card img { width: 100%; height: 100%; object-fit: cover; }
+        .event-overlay {
+            position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            padding: 20px; color: white;
+        }
+
+        /* --- CONTACT SECTION --- */
+        .contact-area { padding: 5rem 5%; background: var(--bg-light); }
+        .contact-wrapper {
+            display: flex; flex-wrap: wrap; gap: 3rem; max-width: 1100px; margin: 0 auto;
+        }
+        
+        .contact-cards-container { flex: 1; min-width: 300px; display: flex; flex-direction: column; gap: 1.5rem; }
+        .info-card {
+            display: flex; align-items: center; gap: 20px; padding: 1.5rem; background: #fff;
+            border-radius: var(--radius); box-shadow: 0 5px 20px rgba(0,0,0,0.05); border: 1px solid #eee;
+        }
+        .info-icon {
+            width: 50px; height: 50px; background: var(--bg-light); color: var(--primary);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
+        }
+        .info-text h4 { margin: 0; color: var(--secondary); font-size: 1.1rem; }
+        .info-text p { margin: 0; color: var(--text-light); font-size: 0.9rem; }
+
+        .social-connect { margin-top: 1rem; display: flex; gap: 15px; }
+        .social-btn {
+            flex: 1; text-align: center; padding: 12px; border-radius: 10px; text-decoration: none; color: white; font-weight: 600;
+            display: flex; align-items: center; justify-content: center; gap: 10px; transition: opacity 0.3s;
+        }
+        .fb { background: #1877F2; }
+        .insta { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
         .social-btn:hover { opacity: 0.9; }
 
-        .map-container { flex: 1; min-width: 300px; height: 350px; border-radius: 10px; overflow: hidden; box-shadow: var(--shadow); }
-        .map-container iframe { width: 100%; height: 100%; border: 0; }
+        .enquiry-box {
+            flex: 1; min-width: 300px; background: white; padding: 2.5rem; border-radius: var(--radius);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1); border-top: 6px solid var(--primary);
+        }
+        .enquiry-box input, .enquiry-box select {
+            width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 8px; outline: none;
+        }
+        .enquiry-box input:focus { border-color: var(--primary); }
+        .submit-btn { width: 100%; padding: 14px; background: var(--secondary); color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; }
+
+        /* --- MAP BOX SECTION --- */
+        .map-section { padding: 4rem 5%; background: white; }
+        .map-container {
+            max-width: 1200px; 
+            margin: 0 auto; 
+            background: white; 
+            padding: 1.5rem; 
+            border-radius: var(--radius); 
+            box-shadow: var(--shadow-card);
+            border: 1px solid #eee;
+        }
+        .map-frame {
+            width: 100%; 
+            height: 450px; 
+            border-radius: 10px; 
+            overflow: hidden;
+        }
+        .map-frame iframe {
+            width: 100%; 
+            height: 100%; 
+            border: 0; 
+            filter: grayscale(10%);
+        }
 
         /* --- FOOTER --- */
-        footer { background: #1a1a1a; color: #bbb; padding: 3rem 5%; text-align: center; font-size: 0.9rem; }
-        footer p { margin-bottom: 10px; }
-        footer a { color: var(--secondary-color); text-decoration: none; }
+        footer { background: #111; color: #aaa; padding: 3rem 5%; text-align: center; font-size: 0.9rem; }
 
-        /* --- MOBILE --- */
+        /* Responsive */
         @media (max-width: 768px) {
-            .contact-header { display: none; } /* Hide phone on small mobile header to save space */
-            .hero-text h2 { font-size: 2rem; }
-            .section-padding { padding: 3rem 5%; }
+            .hero-content h2 { font-size: 2.2rem; }
+            .nav-links { display: none; } 
+            .logo img { height: 45px; }
+            .amb-grid, .student-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
+    <div class="marquee-container">
+        <div class="marquee-content">
+            <span>★ Admissions Open for 2025-26 Session</span>
+            <span>★ Affiliated to Barkatullah University</span>
+            <span>★ 100% Scholarship Available*</span>
+            <span>★ Expert Faculty</span>
+            <span>★ Central Location in Bhopal</span>
+            <span>★ No Age Bar in Any Course</span>
+        </div>
+    </div>
+
     <header>
-        <div class="header-container">
-            <div class="logo-text">
-                <h1>Unique College</h1>
-                <p>Jawahar Chowk, Bhopal</p>
+        <div class="nav-container">
+            <div class="logo">
+                <img src="images/uniclg.jpeg" alt="Unique College Logo">
+                <div class="logo-text">
+                    <h1>Unique College</h1>
+                    <p>AFFILIATED TO BARKATULLAH UNIVERSITY</p>
+                </div>
             </div>
-            <div class="contact-header">
-                <a href="tel:07552776277"><i class="fas fa-phone-alt"></i> 0755-2776277</a>
-                <a href="#apply" style="background: var(--primary-color); color: white; padding: 8px 15px; border-radius: 4px;">Apply Now</a>
+            <div class="nav-links">
+                <a href="#about">Why Us</a>
+                <a href="#courses">Courses</a>
+                <a href="#gallery">Campus Life</a>
+                <a href="#contact">Contact</a>
+                <a href="#contact" class="btn-cta">Enquire Now</a>
             </div>
         </div>
     </header>
 
     <section class="hero">
-        <div class="hero-text">
-            <span style="background: var(--secondary-color); color: white; padding: 5px 12px; border-radius: 4px; font-weight: bold; font-size: 0.9rem;">ADMISSIONS OPEN 2025-26</span>
-            <h2>Empowering Minds, <br>Shaping Futures in <span class="highlight">Bhopal</span></h2>
-            <p>Affiliated with <strong>Barkatullah University</strong>. Join a premier institution committed to academic excellence and holistic development.</p>
-            
-            <div class="hero-features">
-                <span class="feature-tag"><i class="fas fa-check"></i> 100% Scholarship Avail.*</span>
-                <span class="feature-tag"><i class="fas fa-check"></i> Expert Faculty</span>
-                <span class="feature-tag"><i class="fas fa-check"></i> Central Location</span>
+        <div class="hero-content">
+            <h2>Your Future Starts Here</h2>
+            <p>Experience excellence in education with state-of-the-art facilities, expert faculty, and a vibrant campus life in the heart of Bhopal.</p>
+            <a href="#contact" class="btn-cta" style="padding: 15px 40px; font-size: 1.1rem;">Get Started Today</a>
+        </div>
+    </section>
+
+    <section id="about" class="features-section">
+        <div class="section-header">
+            <h2>Why Choose <span>Unique College?</span></h2>
+            <p>We don't just teach; we transform lives through holistic development.</p>
+        </div>
+        
+        <div class="feature-grid">
+            <div class="feature-card card-1">
+                <div class="feature-icon bg-orange"><i class="fas fa-university"></i></div>
+                <h3>Recognized Excellence</h3>
+                <p>Affiliated to Barkatullah University and recognized by the Dept. of Higher Education, Govt. of M.P.</p>
+            </div>
+            <div class="feature-card card-2">
+                <div class="feature-icon bg-blue"><i class="fas fa-chalkboard-teacher"></i></div>
+                <h3>Expert Faculty</h3>
+                <p>Learn from highly qualified professors dedicated to academic rigor and practical knowledge.</p>
+            </div>
+            <div class="feature-card card-3">
+                <div class="feature-icon bg-green"><i class="fas fa-search-location"></i></div>
+                <h3>Prime Location</h3>
+                <p>Situated centrally at Jawahar Chowk, T.T. Nagar, ensuring easy connectivity for all students.</p>
             </div>
         </div>
+    </section>
 
-        <div class="lead-form-container" id="apply">
-            <h3><i class="fas fa-user-graduate"></i> Enquire Now</h3>
-            <form action="https://formspree.io/f/mldqqkag" method="POST">
-                <div class="form-group">
-                    <label>Full Name</label>
-                    <input type="text" name="name" placeholder="Enter your full name" required>
-                </div>
-                <div class="form-group">
-                    <label>Mobile Number</label>
-                    <input type="tel" name="phone" placeholder="10-digit mobile number" pattern="[0-9]{10}" required>
-                </div>
-                <div class="form-group">
-                    <label>Email Address</label>
-                    <input type="email" name="email" placeholder="example@gmail.com" required>
-                </div>
-                <div class="form-group">
-                    <label>Select Course</label>
-                    <select name="course" required>
-                        <option value="" disabled selected>Choose your program...</option>
-                        <option value="BA">Bachelor of Arts (BA)</option>
-                        <option value="B.Com">Bachelor of Commerce (B.Com)</option>
-                        <option value="B.Sc">Bachelor of Science (B.Sc)</option>
-                        <option value="MA">Master of Arts (MA)</option>
-                        <option value="M.Com">Master of Commerce (M.Com)</option>
-                        <option value="M.Sc">Master of Science (M.Sc)</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn-submit">Request Call Back <i class="fas fa-paper-plane"></i></button>
-            </form>
+    <section id="courses" class="courses-section">
+        <div class="section-header">
+            <h2>Academic <span>Programs</span></h2>
+            <p>Comprehensive degree programs tailored for your career aspirations.</p>
         </div>
-    </section>
-
-    <section class="affiliation-bar">
-        <h3><i class="fas fa-university"></i> Affiliated to Barkatullah University, Bhopal</h3>
-        <p>Recognized by Department of Higher Education, Govt. of Madhya Pradesh</p>
-    </section>
-
-    <section class="section-padding" style="background: white;">
-        <h2 class="section-title">Our Academic Programs</h2>
+        
         <div class="course-grid">
-            <div class="course-card">
-                <i class="fas fa-palette"></i>
-                <h4>Bachelor of Arts (B.A)</h4>
-                <p>Comprehensive study of Humanities, Social Sciences, and Liberal Arts.</p>
-                <span class="course-badge">Undergraduate</span>
+            <div class="course-block">
+                <div class="course-icon"><i class="fas fa-palette"></i></div>
+                <h3>Bachelor of Arts (B.A)</h3>
+                <p>Comprehensive study of Humanities and Social Sciences.</p>
+                <span class="course-tag tag-ug">Undergraduate</span>
             </div>
-            <div class="course-card">
-                <i class="fas fa-chart-line"></i>
-                <h4>Bachelor of Commerce (B.Com)</h4>
-                <p>Focus on Financial Accounting, Business Management, and Economics.</p>
-                <span class="course-badge">Undergraduate</span>
+
+            <div class="course-block">
+                <div class="course-icon"><i class="fas fa-chart-line"></i></div>
+                <h3>B.Com (Plain / Comp. App)</h3>
+                <p>Specializations in Economics & Computer Applications.</p>
+                <span class="course-tag tag-ug">Undergraduate</span>
             </div>
-            <div class="course-card">
-                <i class="fas fa-flask"></i>
-                <h4>Bachelor of Science (B.Sc)</h4>
-                <p>Specializations in Physics, Chemistry, Maths, Computer Science & Biology.</p>
-                <span class="course-badge">Undergraduate</span>
+
+            <div class="course-block">
+                <div class="course-icon"><i class="fas fa-laptop-code"></i></div>
+                <h3>B.Sc (Comp. Science)</h3>
+                <p>Focus on Mathematics, Physics, and Computer Science.</p>
+                <span class="course-tag tag-ug">Undergraduate</span>
             </div>
-            <div class="course-card">
-                <i class="fas fa-book-reader"></i>
-                <h4>Master of Arts (M.A)</h4>
-                <p>Advanced degree for research and specialization in Arts subjects.</p>
-                <span class="course-badge">Postgraduate</span>
+
+            <div class="course-block">
+                <div class="course-icon"><i class="fas fa-dna"></i></div>
+                <h3>B.Sc (Biotech / Micro)</h3>
+                <p>Specializations in Biotechnology and Microbiology.</p>
+                <span class="course-tag tag-ug">Undergraduate</span>
             </div>
-            <div class="course-card">
-                <i class="fas fa-briefcase"></i>
-                <h4>Master of Commerce (M.Com)</h4>
-                <p>Expert-level knowledge in Commerce, Corporate Law, and Taxation.</p>
-                <span class="course-badge">Postgraduate</span>
+
+            <div class="course-block">
+                <div class="course-icon"><i class="fas fa-briefcase"></i></div>
+                <h3>BBA</h3>
+                <p>Bachelor of Business Administration for future leaders.</p>
+                <span class="course-tag tag-ug">Undergraduate</span>
             </div>
-            <div class="course-card">
-                <i class="fas fa-atom"></i>
-                <h4>Master of Science (M.Sc)</h4>
-                <p>Research-oriented program in applied sciences and technology.</p>
-                <span class="course-badge">Postgraduate</span>
+
+            <div class="course-block">
+                <div class="course-icon"><i class="fas fa-atom"></i></div>
+                <h3>M.Sc (Science)</h3>
+                <p>Biotechnology, Microbiology, Chemistry, Mathematics & CS.</p>
+                <span class="course-tag tag-pg">Postgraduate</span>
+            </div>
+
+            <div class="course-block">
+                <div class="course-icon"><i class="fas fa-user-tie"></i></div>
+                <h3>M.Com</h3>
+                <p>Master of Commerce with advanced financial studies.</p>
+                <span class="course-tag tag-pg">Postgraduate</span>
+            </div>
+
+            <div class="course-block">
+                <div class="course-icon"><i class="fas fa-microchip"></i></div>
+                <h3>New Edge Technology</h3>
+                <p>Certificate courses in emerging tech trends and modern IT skills.</p>
+                <span class="course-tag tag-cert">Certificate</span>
+            </div>
+
+            <div class="course-block">
+                <div class="course-icon"><i class="fas fa-robot"></i></div>
+                <h3>AI & Management</h3>
+                <p>Specialized courses bridging Artificial Intelligence with business management.</p>
+                <span class="course-tag tag-cert">Specialization</span>
             </div>
         </div>
     </section>
 
-    <section class="section-padding">
-        <h2 class="section-title">Life at Unique College</h2>
-        <div class="gallery-grid">
-            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=600&auto=format&fit=crop" alt="Campus Life" class="gallery-img">
-            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=600&auto=format&fit=crop" alt="Students studying" class="gallery-img">
-            <img src="https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=600&auto=format&fit=crop" alt="College Building" class="gallery-img">
-            <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=600&auto=format&fit=crop" alt="Graduation" class="gallery-img">
+    <section id="gallery" class="gallery-section">
+        <div class="section-header">
+            <h2>Campus <span>Ambiance</span></h2>
+            <p>A space designed for learning, growth, and creativity.</p>
+        </div>
+        <div class="amb-grid">
+            <div class="amb-item"><img src="images/amb1.jpg" alt="Campus View"></div>
+            <div class="amb-item"><img src="images/amb3.jpg" alt="Lab"></div>
+            <div class="amb-item"><img src="images/amb4.jpg" alt="Library"></div>
+            <div class="amb-item"><img src="images/amb5.jpg" alt="Corridor"></div>
         </div>
     </section>
 
-    <section class="contact-section">
-        <h2 class="section-title">Visit Us</h2>
-        <div class="contact-container">
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <div>
-                        <h5>Address</h5>
-                        <p>Unique College, Jawahar Chowk, <br>T.T. Nagar, Bhopal, M.P. 462003</p>
+    <section id="students" class="student-section">
+        <div class="section-header">
+            <h2>Student <span>Life</span></h2>
+            <p>Beyond books – friendships, learning, and memories.</p>
+        </div>
+        <div class="student-grid">
+            <div class="stud-card"><img src="images/stud1.jpg" alt="Students 1"></div>
+            <div class="stud-card"><img src="images/stud2.jpg" alt="Students 2"></div>
+            <div class="stud-card"><img src="images/stud3.jpg" alt="Students 3"></div>
+            <div class="stud-card"><img src="images/stud4.jpeg" alt="Students 4"></div>
+            <div class="stud-card"><img src="images/stud5.jpeg" alt="Students 5"></div>
+            <div class="stud-card"><img src="images/stud6.jpeg" alt="Students 6"></div>
+        </div>
+    </section>
+
+    <section id="events" class="event-section">
+        <div class="section-header">
+            <h2>Events & <span>Celebrations</span></h2>
+            <p>Celebrating culture, talent, and success.</p>
+        </div>
+        <div class="event-collage">
+            <div class="event-card">
+                <img src="images/func1.jpeg" alt="Cultural Fest">
+                <div class="event-overlay"><h4>Cultural Fest</h4></div>
+            </div>
+            <div class="event-card">
+                <img src="images/func2.jpg" alt="Vasant Panchami">
+                <div class="event-overlay"><h4>Vasant Panchami</h4></div>
+            </div>
+            <div class="event-card">
+                <img src="images/stud4.jpeg" alt="Seminars">
+                <div class="event-overlay"><h4>Seminars</h4></div>
+            </div>
+            <div class="event-card">
+                <img src="images/func4.jpeg" alt="Annual Day">
+                <div class="event-overlay"><h4>Annual Day</h4></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-area">
+        <div class="section-header">
+            <h2>Get In <span>Touch</span></h2>
+        </div>
+        <div class="contact-wrapper">
+            
+            <div class="contact-cards-container">
+                <div class="info-card">
+                    <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="info-text">
+                        <h4>Visit Us</h4>
+                        <p>Unique College, Jawahar Chowk, T.T. Nagar, Bhopal</p>
                     </div>
                 </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone-alt"></i>
-                    <div>
-                        <h5>Phone</h5>
-                        <p><a href="tel:07552776277" style="color:#555; text-decoration:none;">0755-2776277</a></p>
+                <div class="info-card">
+                    <div class="info-icon"><i class="fas fa-phone-alt"></i></div>
+                    <div class="info-text">
+                        <h4>Call Us</h4>
+                        <p>0755-2776277</p>
                     </div>
                 </div>
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <div>
-                        <h5>Email</h5>
-                        <p><a href="mailto:uniquecollegebpl@gmail.com" style="color:#555; text-decoration:none;">uniquecollegebpl@gmail.com</a></p>
+                <div class="info-card">
+                    <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                    <div class="info-text">
+                        <h4>Email Us</h4>
+                        <p>uniquecollege1996@gmail.com</p>
                     </div>
                 </div>
 
-                <div class="social-buttons">
-                    <a href="https://www.facebook.com/search/top?q=Unique%20College%20Bhopal" target="_blank" class="social-btn fb-btn">
+                <div class="social-connect">
+                    <a href="https://www.facebook.com/search/top?q=Unique%20College%20Bhopal" target="_blank" class="social-btn fb">
                         <i class="fab fa-facebook-f"></i> Facebook
                     </a>
-                    <a href="https://www.instagram.com/explore/tags/uniquecollegebhopal/" target="_blank" class="social-btn insta-btn">
+                    <a href="https://www.instagram.com/explore/tags/uniquecollegebhopal/" target="_blank" class="social-btn insta">
                         <i class="fab fa-instagram"></i> Instagram
                     </a>
                 </div>
             </div>
 
-            <div class="map-container">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.056637482476!2d77.3946!3d23.2396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c681966a36545%3A0xb30e527063428d05!2sJawahar%20Chowk%2C%20North%20TT%20Nagar%2C%20TT%20Nagar%2C%20Bhopal%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
+            <div class="enquiry-box">
+                <h3 style="margin-bottom:1.5rem; color:var(--primary);">Admissions Enquiry</h3>
+                <form action="https://formspree.io/f/xaqwepew" method="POST" id="enquiryForm">
+                    <input type="text" name="name" placeholder="Full Name" required>
+                    <input type="tel" name="phone" placeholder="Mobile Number" required>
+                    <input type="email" name="email" placeholder="Email Address">
+                    <select name="course" required>
+                        <option value="" disabled selected>Select Course</option>
+                        <option value="BA">B.A</option>
+                        <option value="BCom">B.Com</option>
+                        <option value="BSc">B.Sc</option>
+                        <option value="MA">M.A</option>
+                        <option value="MCom">M.Com</option>
+                        <option value="MSc">M.Sc</option>
+                        <option value="BBA">BBA</option>
+                        <option value="Tech">Technology Certifications</option>
+                        <option value="AI">AI & Management</option>
+                    </select>
+                    <button type="submit" class="submit-btn">Request Information</button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="map-section">
+        <div class="map-container">
+            <div class="section-header" style="margin-bottom: 1.5rem;">
+                <h2 style="font-size: 1.8rem;">Locate <span>Us</span></h2>
+                <p style="font-size: 0.9rem;">Find us at Jawahar Chowk, Bhopal</p>
+            </div>
+            <div class="map-frame">
+                <iframe src="https://maps.google.com/maps?q=Unique+College+Jawahar+Chowk+Bhopal&t=&z=13&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2025 Unique College, Bhopal. All Rights Reserved.</p>
-        <p>Affiliated to <span style="color:white;">Barkatullah University</span></p>
+        <p>© 2025 Unique College, Bhopal. All Rights Reserved.</p>
+        <p style="margin-top:5px; font-size:0.8rem; color:#666;">Affiliated to Barkatullah University</p>
     </footer>
 
+    <script>
+        const form = document.getElementById('enquiryForm');
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const btn = form.querySelector('.submit-btn');
+            const originalText = btn.innerText;
+            
+            btn.innerText = "Sending...";
+            btn.disabled = true;
+
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                if (response.ok) {
+                    alert("Thank you! Your enquiry has been submitted successfully.");
+                    window.location.reload(); // Refreshes page to clear form and return to start
+                } else {
+                    alert("Oops! There was a problem submitting your form. Please try again.");
+                    btn.innerText = originalText;
+                    btn.disabled = false;
+                }
+            }).catch(error => {
+                alert("Oops! There was a network error. Please try again.");
+                btn.innerText = originalText;
+                btn.disabled = false;
+            });
+        });
+    </script>
+
 </body>
-</html>s
+</html>
